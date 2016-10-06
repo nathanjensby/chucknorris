@@ -7,11 +7,19 @@ $(document).ready(function(){
   })
 })
 
-function loadJoke(e) {
+function loadJoke() {
+    var fName = $("#firstName").val();
+    var lName = $("#lastName").val();
 
-    console.log("You got a joke");
+    (fName === "") ? fName = "Chuck": fName = fName;
+    (lName === "") ? lName = "Norris" : lName = lName; 
+
     var options = {
-      url: 'http://api.icndb.com/jokes/random'
+      url: 'http://api.icndb.com/jokes/random',
+      data: {
+          firstName : fName,
+          lastName : lName
+      }
     }
     var result = $.ajax(options)
     result.done(function(object) {
