@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Chuck Norris</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
   </head>
   <body>
@@ -13,6 +14,8 @@
         <form>
           <input type="text" id="firstName" placeholder="First Name">
           <input type="text" id="lastName" placeholder="Last Name">
+          <p>How many jokes?</p>
+          <input type="number" min="0" max="10" step="1" id="numberOfJokes" value="1" >
           <input type="submit" id="newJoke" value="Get a new joke">
         </form>
         <ul class="jokes">
@@ -20,7 +23,7 @@
         </ul>
       </div>
       <div class="container">
-        <h2 class="previousJokes">Previous Jokes</h2>
+        <h3 class="previousJokes">Previous Jokes</h3>
         <ul class="previousJokes">
 
         </ul>

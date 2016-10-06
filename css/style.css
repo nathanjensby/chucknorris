@@ -1,0 +1,21 @@
+body {
+  background-image: url(norris.jpg);
+}
+
+.title {
+  background-color: red;
+  padding:20px 20px 20px 100px;
+  margin: 50px;
+}
+form {
+  background-color: orange;
+  padding: 30px;
+}
+
+p {
+  font-weight: bold;
+}
+
+.cJ {
+  font-size: 35px;
+}
