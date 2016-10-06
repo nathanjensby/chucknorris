@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  loadJoke();
   $('form').on('submit', function(e) {
     e.preventDefault();
     hideAndStoreJoke();
@@ -22,15 +23,10 @@ function loadJoke(e) {
       console.log(status, errorThrown);
     })
 }
-var previousJokes = [];
 
 function hideAndStoreJoke() {
   var lastJoke = $('li').html();
-  console.log(lastJoke);
-  previousJokes.push(lastJoke);
+  var newLastJoke = $("<li />").html(lastJoke);
+  $('ul.previousJokes').prepend(newLastJoke);
   $('ul.jokes').empty();
-  if (previousJokes[0] === undefined) {
-    previousJokes.shift();
-  }
-  console.log(previousJokes.length, previousJokes);
 }
