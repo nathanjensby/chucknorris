@@ -1,10 +1,12 @@
 $(document).ready(function(){
-  $('form').on('submit', loadJoke)
-
+  $('form').on('submit', function(e) {
+    e.preventDefault();
+    hideAndStoreJoke();
+    loadJoke();
+  })
 })
 
 function loadJoke(e) {
-    e.preventDefault();
 
     console.log("You got a joke");
     var options = {
@@ -19,4 +21,16 @@ function loadJoke(e) {
     result.fail(function(jqx, status, errorThrown) {
       console.log(status, errorThrown);
     })
+}
+var previousJokes = [];
+
+function hideAndStoreJoke() {
+  var lastJoke = $('li').html();
+  console.log(lastJoke);
+  previousJokes.push(lastJoke);
+  $('ul.jokes').empty();
+  if (previousJokes[0] === undefined) {
+    previousJokes.shift();
+  }
+  console.log(previousJokes.length, previousJokes);
 }
