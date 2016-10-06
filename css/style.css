@@ -1,19 +1,37 @@
 body {
+  color: white;
+  text-shadow: 2px 2px black;
   background-image: url(norris.jpg);
+  background-size: contain;
+}
+.container {
+  z-index: 99;
+}
+
+img.watermark {
+  opacity: .5;
+  position: fixed;
+  top:10px;
+  height:auto;
+  max-width: 100%;
+  z-index: 0;
 }
 
 .title {
-  background-color: red;
+  background-color: ;
   padding:20px 20px 20px 100px;
   margin: 50px;
+  z-index: 99;
 }
 form {
-  background-color: orange;
+  color: black;
   padding: 30px;
 }
 
 p {
   font-weight: bold;
+  color: white;
+  padding-top: 10px;
 }
 
 .cJ {
